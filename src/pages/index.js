@@ -1,6 +1,11 @@
 import '../App.css';
 import logo from '../logo512.png'
 import { useEffect } from "react"
+import { durationInYears } from '@progress/kendo-date-math';
+
+function getYear() {
+    return durationInYears(new Date(2007, 12, 11), new Date())
+}
 
 function Home() {
   useEffect(() => {
@@ -11,6 +16,8 @@ function Home() {
     <div className="App">
       <h1 className='font-extrabold'>Logan Cammish</h1>
       <p>Portfolio</p> 
+      <i>{getYear()} years old</i>
+      <br/>
       <br/>
       <img className='flex justify-center items-center object-center object-scale-down h-56 w-56' src={logo} alt='Me'/>
       <br/>
