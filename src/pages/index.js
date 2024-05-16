@@ -3,10 +3,6 @@ import logo from '../logo512.png'
 import { useEffect } from "react"
 import { durationInYears } from '@progress/kendo-date-math';
 
-function getYear() {
-    return durationInYears(new Date(2007, 12, 11), new Date())
-}
-
 function Home() {
   useEffect(() => {
     document.title = "Logan Cammish Portfolio"
@@ -14,30 +10,35 @@ function Home() {
 
   return (
     <div className="App">
-      <h1 className='font-extrabold'>Logan Cammish</h1>
-      <p>Portfolio</p> 
-      <i>{getYear()} years old</i>
-      <br/>
-      <br/>
-      <img className='flex justify-center items-center object-center object-scale-down h-56 w-56' src={logo} alt='Me'/>
+      <div className="container">
+        <h1>Logan Cammish</h1>
+        <p>{durationInYears(new Date(2007, 12, 11), new Date())} years old | Portfolio</p>
+        <br/>
+        <br/>
+        <img src={logo} alt='Me'/>
+      </div>
       <br/>
       <hr/>
-      <br/>
-      <h2 className='underline'>Projects</h2>
-      <ul>
-        <li><a href='https://google.com'>thing1</a></li>
-        <li><a href='https://google.com'>thing2</a></li>
-      </ul>
-      <br/>
-      <h2 className='underline'>Experience</h2>
-      <ul>
-        <li>thing1</li>
-        <li>thing2</li>
-      </ul>
-      <br/> 
+      <div className='information'>
+        <br/>
+        <h2 className='underline'>Projects</h2>
+        <ul>
+          <li><a href='https://github.com/logancammish/benchmarks'>Benchmarkers - Rust</a></li>
+          <li><a href='https://github.com/logancammish/cli-file-reader-remake'>CLI File Reader - Rust</a></li>
+          <li><a href='https://github.com/logancammish/portfolio'>This website - ReactJS</a></li>
+        </ul>
+        <br/>
+        <h2 className='underline'>Experience</h2>
+        <ul>
+          <li>{durationInYears(new Date(2019, 1, 1), new Date())}+ years with Lua</li>
+          <li>{durationInYears(new Date(2022, 1, 1), new Date())}+ years with Rust</li>
+        </ul>
+        <br/>
+      </div>
       <hr/>
       <br/> 
       <p className='italic text-sm'>Copyright (c) 2024 Logan Cammish</p>
+      <br/>
     </div>
   );
   
