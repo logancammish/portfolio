@@ -1,4 +1,4 @@
 # Portfolio
-Found at https://lcammish.xyz/
+Found at https://logancammish.github.io/portfolio/
 
 Uses reactjs

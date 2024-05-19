@@ -1,7 +1,9 @@
 import '../App.css';
 import logo from '../logo512.png'
 import { useEffect } from "react"
+import ReactDOM from "react-dom"
 import { durationInYears } from '@progress/kendo-date-math';
+import { SocialIcon } from 'react-social-icons'
 
 function Home() {
   useEffect(() => {
@@ -34,9 +36,13 @@ function Home() {
           <li>{durationInYears(new Date(2022, 1, 1), new Date())}+ years with Rust</li>
         </ul>
         <br/>
+        
       </div>
       <hr/>
       <br/> 
+      <SocialIcon url="https://github.com/logancammish" />
+      <SocialIcon url="https://www.facebook.com/profile.php?id=100075925360797" />
+
       <p className='italic text-sm'>Copyright (c) 2024 Logan Cammish</p>
       <br/>
     </div>
