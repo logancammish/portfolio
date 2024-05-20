@@ -42,6 +42,10 @@ code {
     word-break: break-word;
   }
   
+  .container SocialIcon {
+    bottom: 10%;
+  }
+
   .container p {
     position: absolute;
     top: 60%;
