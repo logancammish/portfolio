@@ -88,6 +88,9 @@ code {
   }
 }
 
+p {
+  font-size: 2em;
+}
 
 li { 
   color:rgb(36, 33, 36);
