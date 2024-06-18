@@ -18,6 +18,9 @@ code {
 
 /* Most PCs */
 @media screen and (min-width: 1030px) {
+  .App {
+    width: 70%;
+  }
   img { 
     display: block;
     margin-left: auto;
@@ -41,6 +44,9 @@ code {
 
 /* Large tablets */
 @media screen and (min-width: 480px) and (max-width: 1030px) {
+  .App {
+    width: 90%;
+  }
   h1 { 
     color:rgb(36, 33, 36);
     font-family: JetBrains Mono;
@@ -55,7 +61,7 @@ code {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
+    width: 40%;
     border-radius: 2%;
     border-width: 2px;
     border-color: black;
@@ -64,6 +70,10 @@ code {
   
 /* Most Phones */
 @media screen and (max-width: 480px) {
+  .App {
+    width: 80%;
+  }
+
   body{ 
     margin: 1%;
   }
@@ -71,7 +81,7 @@ code {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 60%;
     border-radius: 1%;
     border-width: 1px;
     border-color: black;
