@@ -1,10 +1,9 @@
 import React from 'react'
-import  { Redirect } from 'react-router-dom'
 
-function Redir() { return (
-    <Redirect to='/portfolio'/>
+function Redir() { 
+  return (
+   <p>hi</p>
   );
-  
 }
 
 export default Redir;

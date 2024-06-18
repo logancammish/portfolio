@@ -1,8 +1,7 @@
 {
-  "name": "my-app",
+  "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://logancammish.github.io/portfolio",
-  "private": false,
+  "private": true,
   "dependencies": {
     "@progress/kendo-date-math": "^1.5.13",
     "@testing-library/jest-dom": "^5.17.0",
@@ -13,12 +12,9 @@
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "react-social-icons": "^6.16.0",
-    "styled-components": "^6.1.11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,7 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.4"
   }
 }

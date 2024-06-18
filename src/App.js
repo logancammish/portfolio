@@ -5,17 +5,16 @@ import {
     Route,
 } from "react-router-dom";
 import Home from "./pages";
-import Redir from "./pages";
+import Portfolio from "./pages/portfolio";
  
 function App() {
     return (
         <Router>
             <Routes>
-                <Route exact path="/portfolio" element={<Home />} />
-                <Route exact path="/" element={<Redir />} />
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/portfolio" element={<Portfolio />} />
             </Routes>
         </Router>
-        
     );
 }
  
