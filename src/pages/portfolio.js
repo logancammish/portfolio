@@ -3,22 +3,27 @@ import logo from '../logo512.png';
 import { useEffect, useState } from "react";
 import { durationInMonths, durationInYears } from '@progress/kendo-date-math';
 import { SocialIcon } from 'react-social-icons';
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
-function Portfolio() {
+function Portfolio() {  
+  const [isActive, setIsActive] = useState(cookies.get('DM'));
+
   useEffect(() => {
-    document.title = "Logan Cammish Portfolio"
+    document.title = "Logan Cammish Portfolio";
+    document.body.style.backgroundColor = !isActive ? '' : '#000000';
   }, [])
-
-  const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
     setIsActive(current => !current);
-    bodyBackground();
-  };
-
-  const bodyBackground = () => { 
+    setCookie(!isActive);
+    console.log(cookies.get('DM')); 
     document.body.style.backgroundColor = isActive ? '' : '#000000';
   };
+
+  const setCookie = (cookie) => {
+    cookies.set('DM', cookie, { path: '/' });
+  }
 
   return (
     <div style={{
@@ -35,7 +40,9 @@ function Portfolio() {
         <p>{durationInYears(new Date(2007, 12, 11), new Date())} years old | Portfolio</p>
         <br/>
         <br/>
-        <img src={logo} alt='Me'/>
+        <img style={{
+        borderColor: isActive ? 'white' : ''
+      }} src={logo} alt='Me'/>
       </div>
       <br/>
 
@@ -44,7 +51,9 @@ function Portfolio() {
           color: isActive ? 'white' : '',
         }} onClick={handleClick}>dark mode toggle</button>
 
-      <hr/>
+      <hr style={{
+        borderColor: isActive ? 'white' : ''
+      }}/>
       <div  style={{
         color: isActive ? 'white' : ''
       }}   className='information'>
@@ -98,7 +107,9 @@ function Portfolio() {
         <br/>
         
       </div>
-      <hr/>
+      <hr style={{
+        borderColor: isActive ? 'white' : ''
+      }}/>
       <br/> 
 
       <SocialIcon url="https://github.com/logancammish" />
