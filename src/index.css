@@ -31,12 +31,10 @@ code {
     border-color: black;
   }
   h1 { 
-    color:rgb(36, 33, 36);
     font-family: JetBrains Mono;
     font-size: 4em;
   }
   h2 { 
-    color:rgb(36, 33, 36);
     font-family: JetBrains Mono;
     font-size: 3em;
   }
@@ -48,12 +46,10 @@ code {
     width: 90%;
   }
   h1 { 
-    color:rgb(36, 33, 36);
     font-family: JetBrains Mono;
     font-size: 2.5em;
   }
   h2 { 
-    color:rgb(36, 33, 36);
     font-family: JetBrains Mono;
     font-size: 2em;
   }
@@ -64,7 +60,6 @@ code {
     width: 40%;
     border-radius: 2%;
     border-width: 2px;
-    border-color: black;
   }
 }
   
@@ -84,15 +79,12 @@ code {
     width: 60%;
     border-radius: 1%;
     border-width: 1px;
-    border-color: black;
   }
   h2 { 
-    color:rgb(36, 33, 36);
     font-family: JetBrains Mono;
     font-size: 2em;
   }
   h1 { 
-    color:rgb(36, 33, 36);
     font-family: JetBrains Mono;
     font-size: 2.5em;
   }
@@ -103,28 +95,18 @@ p {
 }
 
 li { 
-  color:rgb(36, 33, 36);
   font-family: JetBrains Mono;
   font-size: 1.4em;
 }
 
 
 h3 { 
-  color:rgb(36, 33, 36);
   font-family: JetBrains Mono;
 }
 h4 { 
-  color:rgb(36, 33, 36);
   font-family: JetBrains Mono;
 }
 ul { 
-  color:rgb(36, 33, 36);
   font-family: JetBrains Mono SemiBold;
   font-size: small;
-}
-body { 
-  background-color: rgb(249, 219, 181); 
-}
-hr { 
-  border-color: black;
 }

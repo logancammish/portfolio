@@ -11,37 +11,33 @@ function Portfolio() {
 
   useEffect(() => {
     document.title = "Logan Cammish Portfolio";
-    document.body.style.backgroundColor = !isActive ? '' : '#000000';
+    document.body.style.backgroundColor = !isActive ? 'rgb(249, 219, 181)' : '#000000';
   }, [])
 
   const handleClick = () => {
     setIsActive(current => !current);
-    setCookie(!isActive);
+    cookies.set('DM', !isActive, { path: '/' });
     console.log(cookies.get('DM')); 
-    document.body.style.backgroundColor = isActive ? '' : '#000000';
+    document.body.style.backgroundColor = isActive ? 'rgb(249, 219, 181)' : '#000000';
   };
-
-  const setCookie = (cookie) => {
-    cookies.set('DM', cookie, { path: '/' });
-  }
 
   return (
     <div style={{
-      backgroundColor: isActive ? '#171717' : '',
-      color: isActive ? 'white' : ''
+      backgroundColor: isActive ? '#171717' : 'rgba(241, 238, 238, 0.791)',
+      color: isActive ? 'white' : 'rgb(36, 33, 36)'
     }}  className="App">
 
       <div style={{
-        color: isActive ? 'white' : ''
+        color: isActive ? 'white' : 'rgb(36, 33, 36)'
       }}  className="container">
         <h1 style={{
-          color: isActive ? 'white' : ''
+          color: isActive ? 'white' : 'rgb(36, 33, 36)'
         }}>Logan Cammish</h1>
         <p>{durationInYears(new Date(2007, 12, 11), new Date())} years old | Portfolio</p>
         <br/>
         <br/>
         <img style={{
-        borderColor: isActive ? 'white' : ''
+        borderColor: isActive ? 'white' : 'rgb(36, 33, 36)'
       }} src={logo} alt='Me'/>
       </div>
       <br/>
@@ -52,7 +48,7 @@ function Portfolio() {
         }} onClick={handleClick}>dark mode toggle</button>
 
       <hr style={{
-        borderColor: isActive ? 'white' : ''
+        borderColor: isActive ? 'white' : 'black'
       }}/>
       <div  style={{
         color: isActive ? 'white' : ''
@@ -108,7 +104,7 @@ function Portfolio() {
         
       </div>
       <hr style={{
-        borderColor: isActive ? 'white' : ''
+        borderColor: isActive ? 'white' : 'black'
       }}/>
       <br/> 
 
