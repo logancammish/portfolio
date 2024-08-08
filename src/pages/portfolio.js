@@ -167,6 +167,8 @@ function Portfolio() {
         <SocialIcon url="https://www.facebook.com/profile.php?id=100075925360797" />
       <p className='italic text-sm'>Copyright (c) 2024 Logan Cammish</p>
       <br/>
+
+      Send all inquires to logancammish@lcammish.xyz
     </div>
   );
   

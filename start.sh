@@ -1,2 +1,2 @@
-echo "Serving yourAppName!"
+echo "Serving!"
 serve -s build
