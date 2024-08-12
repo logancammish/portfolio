@@ -4,22 +4,28 @@ import { useEffect, useState } from "react";
 import { durationInMonths, durationInYears } from '@progress/kendo-date-math';
 import { SocialIcon } from 'react-social-icons';
 import Cookies from 'universal-cookie';
-import { useSpring, animated, config } from "@react-spring/web";
+import { useSpring, animated } from "@react-spring/web";
 const cookies = new Cookies();
 
 function Portfolio() {  
-  const [isActive, setIsActive] = useState(cookies.get('DM'));
+  const [isActive, setIsActive] = useState(cookies.get('DM') || false);
 
-  const { x } = useSpring({
-    from: { x: 0 }, // Starting value of the animated property
-    x: 1,
-    config: { duration: 1000 }, // Configuration for the animation, specifying the duration
+  const { nameBounceSpring } = useSpring({
+    from: { nameBounceSpring: 0 }, 
+    nameBounceSpring: 1,
+    config: { duration: 1000 }, 
+  });
+
+  const { dmButtonSpring } = useSpring({
+    from: { dmButtonSpring: 0 }, 
+    dmButtonSpring: 1,
+    config: { duration: 1000 }, 
   });
 
   useEffect(() => {
     document.title = "Logan Cammish Portfolio";
     document.body.style.backgroundColor = !isActive ? 'rgb(249, 219, 181)' : '#000000';
-  }, [])
+  }, [isActive])
 
 
 
@@ -32,7 +38,6 @@ function Portfolio() {
   
   const [isHeld, setHeld] = useState(false);
 
-
   useEffect(() => {
     if (!isHeld) {
       return;
@@ -41,7 +46,7 @@ function Portfolio() {
     const timeoutId = window.setTimeout(() => {
       console.log("Timed out")
       setHeld(false);
-    }, 250);
+    }, 500);
   
     return () => {
       window.clearTimeout(timeoutId);
@@ -61,13 +66,13 @@ function Portfolio() {
     <animated.h1
         style={{
           color: isActive ? 'white' : 'rgb(36, 33, 36)',
-          opacity: x.to({ range: [0, 1], output: [0.3, 1] }),
-          transform: x
+          opacity: nameBounceSpring.to({ range: [0, 1], output: [0.3, 1] }),
+          transform: nameBounceSpring
             .to({
               range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
               output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
             })
-            .to((x) => `scale(${x})`),
+            .to((nameBounceSpring) => `scale(${nameBounceSpring})`),
         }}
       >Logan Cammish      </animated.h1>
 
@@ -77,13 +82,13 @@ function Portfolio() {
         <animated.p
         style={{
           color: isActive ? 'white' : 'rgb(36, 33, 36)',
-          opacity: x.to({ range: [0, 1], output: [0.3, 1] }),
-          transform: x
+          opacity: nameBounceSpring.to({ range: [0, 1], output: [0.3, 1] }),
+          transform: nameBounceSpring
             .to({
               range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
               output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
             })
-            .to((x) => `scale(${x})`),
+            .to((nameBounceSpring) => `scale(${nameBounceSpring})`),
         }}
       >{durationInYears(new Date(2007, 12, 11), new Date())} years old | Portfolio      </animated.p>
 
@@ -96,12 +101,13 @@ function Portfolio() {
       <br/>
 
       <animated.button onMouseEnter={onMouseEnter} style={{
-          rotate: isHeld ? -1 : 0,
-          config: config.wobbly,
-          backgroundColor: isActive ? '#00000' : '',
+          borderRadius: "5%",
+          backgroundColor: isActive ? '#1c1c1c' : '#d6d4d4',
           color: isActive ? 'white' : '',
+          rotate: isHeld ? dmButtonSpring.to({ range: [0, 0.1, 0.5, 1], output: [0, 0.1, 0.5, 1] }) : 0,
         }} onClick={handleClick}>dark mode toggle</animated.button>
 
+        <br></br>
       <hr style={{
         borderColor: isActive ? 'white' : 'black'
       }}/>
