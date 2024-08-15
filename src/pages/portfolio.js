@@ -8,7 +8,7 @@ import { useSpring, animated } from "@react-spring/web";
 const cookies = new Cookies();
 
 function Portfolio() {  
-  const [isActive, setIsActive] = useState(cookies.get('DM') || false);
+  const [isDarkModeActive, setDarkModeActive] = useState(cookies.get('DM') || false);
 
   const { nameBounceSpring } = useSpring({
     from: { nameBounceSpring: 0 }, 
@@ -24,16 +24,16 @@ function Portfolio() {
 
   useEffect(() => {
     document.title = "Logan Cammish Portfolio";
-    document.body.style.backgroundColor = !isActive ? 'rgb(249, 219, 181)' : '#000000';
-  }, [isActive])
+    document.body.style.backgroundColor = !isDarkModeActive ? 'rgb(249, 219, 181)' : '#000000';
+  }, [isDarkModeActive])
 
 
 
   const handleClick = () => {
-    setIsActive(current => !current);
-    cookies.set('DM', !isActive, { path: '/' });
+    setDarkModeActive(current => !current);
+    cookies.set('DM', !isDarkModeActive, { path: '/' });
     console.log(cookies.get('DM')); 
-    document.body.style.backgroundColor = isActive ? 'rgb(249, 219, 181)' : '#000000';
+    document.body.style.backgroundColor = isDarkModeActive ? 'rgb(249, 219, 181)' : '#000000';
   };
   
   const [isHeld, setHeld] = useState(false);
@@ -59,13 +59,13 @@ function Portfolio() {
   
   return (
     <div style={{
-      backgroundColor: isActive ? '#171717' : 'rgba(241, 238, 238, 0.791)',
-      color: isActive ? 'white' : 'rgb(36, 33, 36)'
+      backgroundColor: isDarkModeActive ? '#171717' : 'rgba(241, 238, 238, 0.791)',
+      color: isDarkModeActive ? 'white' : 'rgb(36, 33, 36)'
     }}  className="App">
 
     <animated.h1
         style={{
-          color: isActive ? 'white' : 'rgb(36, 33, 36)',
+          color: isDarkModeActive ? 'white' : 'rgb(36, 33, 36)',
           opacity: nameBounceSpring.to({ range: [0, 1], output: [0.3, 1] }),
           transform: nameBounceSpring
             .to({
@@ -81,7 +81,7 @@ function Portfolio() {
       }}  className="container">
         <animated.p
         style={{
-          color: isActive ? 'white' : 'rgb(36, 33, 36)',
+          color: isDarkModeActive ? 'white' : 'rgb(36, 33, 36)',
           opacity: nameBounceSpring.to({ range: [0, 1], output: [0.3, 1] }),
           transform: nameBounceSpring
             .to({
@@ -95,69 +95,69 @@ function Portfolio() {
         <br/>
         <br/>
         <img style={{
-        borderColor: isActive ? 'white' : 'rgb(36, 33, 36)'
+        borderColor: isDarkModeActive ? 'white' : 'rgb(36, 33, 36)'
       }} src={logo} alt='Me'/>
       </div>
       <br/>
 
       <animated.button onMouseEnter={onMouseEnter} style={{
           borderRadius: "5%",
-          backgroundColor: isActive ? '#1c1c1c' : '#d6d4d4',
-          color: isActive ? 'white' : '',
+          backgroundColor: isDarkModeActive ? '#1c1c1c' : '#e6dfdf',
+          color: isDarkModeActive ? 'white' : '',
           rotate: isHeld ? dmButtonSpring.to({ range: [0, 0.1, 0.5, 1], output: [0, 0.1, 0.5, 1] }) : 0,
         }} onClick={handleClick}>dark mode toggle</animated.button>
 
         <br></br>
       <hr style={{
-        borderColor: isActive ? 'white' : 'black'
+        borderColor: isDarkModeActive ? 'white' : 'black'
       }}/>
       <div  style={{
-        color: isActive ? 'white' : ''
+        color: isDarkModeActive ? 'white' : ''
       }}   className='information'>
         <br/>
         <h2 style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }} className='underline'>Projects</h2>
         <ul>
           <li style={{
-            color: isActive ? 'white' : ''
+            color: isDarkModeActive ? 'white' : ''
         }}><a href='https://github.com/logancammish/benchmarks'>Benchmarkers - Rust</a></li>
           <li style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }}>
           <a href='https://github.com/glorpglob/OS-Demo'>Operating System Simulation - Luau</a></li>
           <li style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }}><a href='https://github.com/logancammish/coffee-game'>Coffee Game - Rust</a></li>
           <li style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }}><a href='https://github.com/logancammish/cli-file-reader-remake'>CLI File Reader - Rust</a></li>
           <li style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }}><a href='https://github.com/logancammish/portfolio'>This website - ReactJS</a></li>
         </ul>
         <br/>
         <h2 style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }} className='underline'>Experience</h2>
         <ul>
           <li style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }} >{durationInYears(new Date(2019, 1, 1), new Date())}+ years with Lua</li>
           <li style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }}>{durationInYears(new Date(2022, 1, 1), new Date())}+ years with Rust</li>
           <li style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }}>{durationInMonths(new Date(2024, 3, 30), new Date())}+ months with ReactJS</li>
         </ul>
         <br/>
         <h2 className='underline' style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }}>Qualifications</h2>
         <ul>
           <li style={{
-          color: isActive ? 'white' : ''
+          color: isDarkModeActive ? 'white' : ''
         }}>NCEA Level 1</li>
         </ul>
         <br/>
@@ -165,12 +165,15 @@ function Portfolio() {
         
       </div>
       <hr style={{
-        borderColor: isActive ? 'white' : 'black'
+        borderColor: isDarkModeActive ? 'white' : 'black'
       }}/>
       <br/> 
 
-      <SocialIcon url="https://github.com/logancammish" />
-        <SocialIcon url="https://www.facebook.com/profile.php?id=100075925360797" />
+      <SocialIcon  url="https://github.com/logancammish" />
+        <SocialIcon style={{
+        marginLeft: "4px"
+      }}
+        url="https://www.facebook.com/profile.php?id=100075925360797" />
       <p className='italic text-sm'>Copyright (c) 2024 Logan Cammish</p>
       <br/>
 

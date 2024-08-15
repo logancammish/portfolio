@@ -31,11 +31,11 @@ code {
     border-color: black;
   }
   h1 { 
-    font-family: JetBrains Mono;
+    font-family:Roboto;
     font-size: 4em;
   }
   h2 { 
-    font-family: JetBrains Mono;
+    font-family:Roboto;
     font-size: 3em;
   }
 }
@@ -46,11 +46,11 @@ code {
     width: 90%;
   }
   h1 { 
-    font-family: JetBrains Mono;
+    font-family:Roboto;
     font-size: 2.5em;
   }
   h2 { 
-    font-family: JetBrains Mono;
+    font-family:Roboto;
     font-size: 2em;
   }
   img { 
@@ -81,11 +81,11 @@ code {
     border-width: 1px;
   }
   h2 { 
-    font-family: JetBrains Mono;
+    font-family:Roboto;
     font-size: 2em;
   }
   h1 { 
-    font-family: JetBrains Mono;
+    font-family:Roboto;
     font-size: 2.5em;
   }
 }
@@ -95,18 +95,18 @@ p {
 }
 
 li { 
-  font-family: JetBrains Mono;
+  font-family:Roboto;
   font-size: 1.4em;
 }
 
 
 h3 { 
-  font-family: JetBrains Mono;
+  font-family:Roboto;
 }
 h4 { 
-  font-family: JetBrains Mono;
+  font-family:Roboto;
 }
 ul { 
-  font-family: JetBrains Mono SemiBold;
+  font-family:Roboto SemiBold;
   font-size: small;
 }
