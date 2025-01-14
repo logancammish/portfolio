@@ -159,6 +159,9 @@ function Portfolio() {
           <li style={{
           color: isDarkModeActive ? 'white' : ''
         }}>NCEA Level 1</li>
+          <li style={{
+          color: isDarkModeActive ? 'white' : ''
+        }}>NCEA Level 2 with Merit Endorsement</li>
         </ul>
         <br/>
         <br/>
